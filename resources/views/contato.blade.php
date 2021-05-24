@@ -2,7 +2,7 @@
 @section('conteudo')
         <h2>Contato</h2><br>
         
-        <form action="/home" method="POST">
+        <form action="#" method="POST">
             <div>
                 Nome:<br><input type="text">
             </div>

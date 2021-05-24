@@ -16,25 +16,35 @@
         .img{
             width: 102px;
         }
-
+        
+        .nav-link{
+            color:black;
+        }
     </style>
 </head>
 <body >
-    <nav class="navbar navbar-light navbar-expand-md bg-light p1-5 pr-5 mb-5">
+    <nav class="navbar navbar-light navbar-expand-md bg-light p1-5 pr-5 mb-5" >
         <a href="/" class="navbar-brand"><img class="img"src="img/logo01.png"></a>
         <div class="collapse navbar-collapse">
             <div class="navbar-nav">
-                <a class="nav-link" href="{{ route('inicio')}}"> HOME</a>
+                <img class="img01" src="img/home.png" style="width:2%;height:1%;">
+                <!--<a class="nav-link" href="{{-- route('inicio')--}}"> HOME</a>
+              -->  
                 <a class="nav-link" href="{{ route('categoria')}}">CATEGORIA</a>
+                <img class="img01" src="img/contato.png" style="width:2%;height:1%;">
                 <a class="nav-link" href="{{ route('contato')}}">CONTATO</a>
-                <a class="nav-link" href="{{ route('cadastro')}}">CLIENTE</a>
+                
+                
             </div>
         </div>
         
         <a href="#"class="btn btn-sm">
             <i class="fa fa-shopping-cart"></i>
-            <img class="img01"src="img/carrinho.png">
-        </a>                                  
+            <img class="img01" src="img/carrinho.png">
+        </a>  
+        <img class="img01" src="img/user1.png" style="width:1%;">
+                <a  class="nav-link" href="{{ route('cadastro')}}"><h6><strong>Entre ou Cadastre-se</h6></strong></a>    
+                                            
     </nav>
 
     <div class="container">
