@@ -38,7 +38,7 @@
             </div>
         </div>
         
-        <a href="#"class="btn btn-sm">
+        <a href="{{ route('ver_carrinho')}}"class="btn btn-sm">
             <i class="fa fa-shopping-cart"></i>
             <img class="img01" src="img/carrinho.png">
         </a>  
