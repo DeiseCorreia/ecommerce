@@ -25,7 +25,7 @@ class ProdutoController extends Controller
         $listaCategoria= Categoria::all();
 
         //select * from produtos limit 4;
-        $queryprod= Produto::limit(4);
+        $queryprod= Produto::limit(10);
 
         if($idcategoria != 0){//se for != é porque foi passado 
             //where categoria_id = $idcategoria; (condição)

@@ -1,25 +1,83 @@
+
 @extends('layout')
 @section('conteudo')
-    <h2>Login</h2>
-     <form action="#" method="POST">
-            
-            <div>
-                Email:<br><input type="email">
+
+        <div class="col-12">
+            <h2 class="mb-3">Cadastro</h2>
+        </div>
+        <form action="" method="POST">
+                <div class="row">
+                {{-- dados do cliente que está fazendo seu cadastro --}}
+                <div class="col-6">
+                    <div class=" form-group">
+                        Nome:<br><input type="text" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class=" form-group">
+                        E-mail:<br><input type="email" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class=" form-group">
+                        CPF:<br><input placeholder="09-999-999-90" type="text" class="form-control" required/>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class=" form-group">
+                    Senha:<br><input type="password" class="form-control"required/>
+                    <h6 style="color:gray;"><strong>Senha tem que conter no minimo 8 caracteres</strong></h6>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class=" form-group" required>
+                    Repita sua Senha:<br><input type="password" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class=" form-group">
+                    CEP:<br><input  id="btn" type="text" class="form-control"required/>
+                    <button id="cep" class="btn btn-sm btn-secondary" type="button" >Não sabe seu cep</button> 
+                    {{-- {"id":3493,"cep":"42800071","logradouro": --}}
+                    {{-- "Avenida Deputado Luís Eduardo Magalhães", --}}
+                    {{-- "bairro":"Centro","municipio":"Camaçari","uf":"BA"} --}}
+                    
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class=" form-group">
+                    Endereço:<br><input id="bairro"type="text" class="form-control"/>
+                    </div>
+                </div>
+
+                <div  class="col-4">
+                    <div class=" form-group">
+                    Cidade:<br><input id="localidade" type="text" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class=" form-group">
+                    Estado:<br><input id="uf"type="text" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class=" form-group">
+                     <input type="submit" value="Cadastrar" class="btn btn-success btn-sm">
+                    </div>
+                </div>
             </div>
-              <div>
-                Senha:<br><input type="password">
-            </div><br>
-            <input style="text-align:center"value="Entrar" type="submit">
-            <a style="color:gray;" href="#">Esqueceu a Senha?</a>
-            <br>
-            <br>
-            <div>
-                <label><strong>Novo na .Net Eletronics?</strong></label><br>
-                <input type="submit" value="Crie sua conta aqui">
-            </div>
-            <br>
-            <a href="{{ route('inicio')}}">
-                <img  class="img01" src="img/voltar.png" style="width:20%;">
-            </a>
-        </form>
+            </form>
 @endsection
+<script href="/public/app.js"></script>
+
+{{-- </script> --}}
+{{-- <input type="submit" value="Cadastrar"> --}}
+                {{-- <input type="submit" value="Enviar"> --}}

@@ -36,6 +36,10 @@ class InsertProducts extends Migration
         $prod->save();
 
 
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 5','valor' => 950,'foto'=>'img/celular05.jpg','descricao'=>'Sansung A-02S 32G','categoria_id'=>$cate->id]);
+        $prod->save();
+
+
         $prod = new \App\Models\Produto(['nome'=> 'Produto 5','valor' => 1500,'foto'=>'img/computador01.jpg','descricao'=>'Notebook','categoria_id'=>$cate->id]);
         $prod->save();
 

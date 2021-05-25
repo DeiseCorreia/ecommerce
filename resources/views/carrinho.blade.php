@@ -7,8 +7,8 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>Nome</th>
                     <th>Foto</th>
+                    <th>Nome</th>
                     <th>Valor</th>
                     <th>Descrição</th>
                 </tr>
@@ -18,25 +18,26 @@
                     <tr>
                         <td>
                             <a href="#" class="btn btn-danger btn-sm">
-                                <img  class="img01" src="img/lixeira.png">
-                                <i class="fa fa-remove"></i> 
+                                <!--<img  class="img01" src="img/lixeira.png">-->
+                                <i class="fa fa-trash"></i> <strong>Delete</strong>
                             </a>
                         </td>
-                        <td>{{$p->nome}}</td>
                         <td><img src="{{asset($p->foto)}}" height="50"></td>
+                        <td>{{$p->nome}}</td>
                         <td>{{$p->valor}}</td>
                         <td>{{$p->descricao}}</td>
                         
                     </tr>
                 @endforeach
             </tbody>
+            
         </table>  
-        <input type="submit" value="Compra" href="#"> 
+        <input class="btn btn-success btn-sm" type="submit" value="Compra" href="#">   
+       
        @else
             <p>Nenhum item no carrinho!</p>
        @endif
-           
-       
+         
 
 @endsection
 
