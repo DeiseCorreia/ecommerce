@@ -1,6 +1,6 @@
 @extends('layout')
 @section('conteudo')
-       <h2>Carrinho</h2>
+       <h2></h2><br>
         {{--estou verificando aqui se realmente existe a variavel para enviar esses dados--}}
        @if(isset($cart) && count($cart) > 0) {{--também está verificando se tem algum valor na mesma--}}
         <table class="table">
@@ -14,10 +14,10 @@
                 </tr>
             </thead><!--cabeçario da tabela-->
             <tbody>
-                @foreach ($cart as $p){{--p: objeto de produto--}}
+                @foreach ($cart as $indice => $p){{--p: objeto de produto--}}
                     <tr>
                         <td>
-                            <a href="#" class="btn btn-danger btn-sm">
+                            <a href="{{ route ('carrinho_excluir', ['indice' =>$indice])}}" class="btn btn-danger btn-sm">
                                 <!--<img  class="img01" src="img/lixeira.png">-->
                                 <i class="fa fa-trash"></i> <strong>Delete</strong>
                             </a>
@@ -35,7 +35,8 @@
         <input class="btn btn-success btn-sm" type="submit" value="Compra" href="#">   
        
        @else
-            <p>Nenhum item no carrinho!</p>
+            <img  class="img01" src="img/carrinhovazio.png">
+            <br><p><strong>Nenhum item no carrinho!</strong></p>
        @endif
          
 

@@ -1,28 +1,25 @@
-//refazzer tudo!!!!!!!
-//pelo menos dessa parte!
-$(document).ready(function () {
-    $("#btn").on("click", function () {
-        console.log('test');
-        var ncep = $("#cep").val()
-        url = "http://viacep.com.br/ws/"+ncep+"/json";
+$( document ).ready(function(){
+    console.log( "ready!" );
+    $("#btn").on("click",function(){
 
-
+        var ncep = $("#cep").val()//o valor desse campo vai ser atribuido a essa variavel que foi criada!
+        
+        
+     
+        var url =  "https://viacep.com.br/ws/"+ncep+"/json/"
+     
         $.ajax({
             url: url,
-            type: "get",
-            dataType: "json",
-
-            success: function (dados) {
-                console.log(dados);
-                // $("#uf").val(dados.uf);
-
-                // $("#localidade").val(dados.localidade);
-
-                // $("#bairro").val(dados.bairro);
-            }
-        });
-
-    })
-});
-
-
+            type:"get",
+             dataType:"json",
+     
+             success:function(dados){//lembra do sucess -> é com 2 cc
+                 console.log(dados)
+     
+                 $("#uf").val(dados.uf)
+                 $("#bairro").val(dados.bairro)
+                 $("#localidade").val(dados.localidade)
+             }
+        })
+     })
+})

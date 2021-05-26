@@ -35,10 +35,14 @@ class InsertProducts extends Migration
         $prod = new \App\Models\Produto(['nome'=> 'Produto 4','valor' => 1950,'foto'=>'img/celular04.jpg','descricao'=>'','categoria_id'=>$cate->id]);
         $prod->save();
 
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 11','valor' => 1500,'foto'=>'img/celular07.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
 
         $prod = new \App\Models\Produto(['nome'=> 'Produto 5','valor' => 950,'foto'=>'img/celular05.jpg','descricao'=>'Sansung A-02S 32G','categoria_id'=>$cate->id]);
         $prod->save();
 
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 7','valor' => 1500,'foto'=>'img/celular06.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
 
         $prod = new \App\Models\Produto(['nome'=> 'Produto 5','valor' => 1500,'foto'=>'img/computador01.jpg','descricao'=>'Notebook','categoria_id'=>$cate->id]);
         $prod->save();
@@ -46,7 +50,22 @@ class InsertProducts extends Migration
         $prod = new \App\Models\Produto(['nome'=> 'Produto 6','valor' => 1500,'foto'=>'img/computador02.png','descricao'=>'Notebook','categoria_id'=>$cate->id]);
         $prod->save();
 
-        $prod = new \App\Models\Produto(['nome'=> 'Produto 7','valor' => 1500,'foto'=>'img/computador03.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 7','valor' => 1500,'foto'=>'img/computador03.jpeg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
+
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 8','valor' => 1500,'foto'=>'img/computador04.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
+
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 9','valor' => 1500,'foto'=>'img/computador05.webp','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
+
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 10','valor' => 1500,'foto'=>'img/computador06.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
+
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 11','valor' => 1500,'foto'=>'img/computador07.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
+        $prod->save();
+
+        $prod = new \App\Models\Produto(['nome'=> 'Produto 11','valor' => 1500,'foto'=>'img/computador08.jpg','descricao'=>'Computador-Desktop','categoria_id'=>$cate->id]);
         $prod->save();
         
 

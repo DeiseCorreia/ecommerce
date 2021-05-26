@@ -28,7 +28,7 @@
 
                 <div class="col-6">
                     <div class=" form-group">
-                    Senha:<br><input type="password" class="form-control"required/>
+                    Senha:<br><input type="password" class="form-control" required/>
                     <h6 style="color:gray;"><strong>Senha tem que conter no minimo 8 caracteres</strong></h6>
                     </div>
                 </div>
@@ -41,12 +41,10 @@
 
                 <div class="col-4">
                     <div class=" form-group">
-                    CEP:<br><input  id="btn" type="text" class="form-control"required/>
-                    <button id="cep" class="btn btn-sm btn-secondary" type="button" >Não sabe seu cep</button> 
-                    {{-- {"id":3493,"cep":"42800071","logradouro": --}}
-                    {{-- "Avenida Deputado Luís Eduardo Magalhães", --}}
-                    {{-- "bairro":"Centro","municipio":"Camaçari","uf":"BA"} --}}
-                    
+
+                    CEP:<br>
+                        <input  id="cep" type="text" class="form-control" required/>
+                        <button id="btn" class="btn btn-sm btn-secondary" type="button">Não sabe seu cep?</button> 
                     </div>
                 </div>
 
@@ -76,7 +74,7 @@
             </div>
             </form>
 @endsection
-<script href="/public/app.js"></script>
+
 
 {{-- </script> --}}
 {{-- <input type="submit" value="Cadastrar"> --}}
