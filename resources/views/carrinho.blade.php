@@ -19,11 +19,21 @@
                         <td>
                             <a href="{{ route ('carrinho_excluir', ['indice' =>$indice])}}" class="btn btn-danger btn-sm">
                                 <!--<img  class="img01" src="img/lixeira.png">-->
-                                <i class="fa fa-trash"></i> <strong>Delete</strong>
+                                <i class="fa fa-trash"></i> <strong>-</strong>
                                 
                             </a>
+                            @if ($isset ??($cart) && ($indice > 1))
+                                    <img src="carrinho1.png" alt="carrinho 1">
+
+                            @endif
+                            
+
+                             <input type="number" id="qtd" style="width:35px; height:25px;"><!--config a qtd dos produtos"-->
+                            <a href="#" class="btn btn-success btn-sm">
+                                <i class="fa fa-trash"></i> <strong>+</strong>
+                                </a>
                             <!--<small>QTD:</small>-->
-                            <input type="number" id="qtd" style="width:35px; height:25px;"><!--config a qtd dos produtos"-->
+                           
                         </td>
                         <td><img src="{{asset($p->foto)}}" height="50"></td>
                         <td>{{$p->nome}}</td>

@@ -46,8 +46,9 @@
                         CEP:<br>
                         <input  name="cep"id="cep" type="text" class="form-control" /><br>
                         <button id="btn" class="btn btn-sm btn-secondary" type="button">Aperte</button> <br>
-                        <a style="color:gray;"href="https://buscacepinter.correios.com.br/app/endereco/index.php?t">Não sabe seu CEP?</a>
-
+                        <a style="color:gray;"href="https://buscacepinter.correios.com.br/app/endereco/index.php?t" target="_blank">Não sabe seu CEP?</a>
+                        {{-- linha 49 troquei para direcionar para outra janela, tipo página 1 tem um link e esse link vai ser redirecionado
+                        para a pagina 2 ou seja outra aba do navegador! --}}
                     </div>
                 </div>
 
@@ -65,13 +66,14 @@
 
                 <div  class="col-4">
                     <div class=" form-group">
-                    Cidade:<br><input name="cidade"id="cidade" type="text" class="form-control"/>
+                    Cidade:<br><input name="cidade" id="cidade" type="text" class="form-control"/>
                     </div>
                 </div>
 
                 <div class="col-4">
                     <div class=" form-group">
-                        Estado:<br><select name="uf" id="uf">
+                        Estado:<br><select name="estado"
+                         id="estado">
                             <option>-</option>
                             <option>BA</option>
                             <option>SP</option>

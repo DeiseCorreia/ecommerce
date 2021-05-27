@@ -18,7 +18,7 @@ $( document ).ready(function(){
      
                  $("#uf").val(dados.uf)
                  $("#bairro").val(dados.bairro)
-                 $("#cidade").val(dados.cidade)
+                 $("#localidade").val(dados.localidade)
              }
         })
      })

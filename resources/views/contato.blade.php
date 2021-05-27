@@ -1,7 +1,14 @@
 @extends('layout')
 @section('conteudo')
-        <h2>Contato</h2><br>
-        
+    <div>
+        <header>
+            <small>
+
+                <h2>Contato</h2><br>
+            </small>
+            
+        </header>
+    </div>
         <form action="#" method="POST">
             <div>
                 Nome:<br><input type="text">

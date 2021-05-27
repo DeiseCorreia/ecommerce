@@ -27,17 +27,35 @@ class ClienteController extends Controller
 
         $cliente = new Cliente();//instancia
         //para evitar ficar fazendo isso($cliente->cpf = $request->input("cpf", ""));
-        $cliente->fill($values);//metodo fill()
-        $cliente->login = $request->input("cpf","");
+        //$cliente->fill($values);//metodo fill()
+        //dd($values);
 
-        $cliente_enderecos = new ClienteEndereco($values);//instancia
-       
+
+        $cliente->login = $request->input("cpf"," ");
+        $cliente->senha = $request->input("senha"," ");
+        $cliente->nome = $request->input("nome"," ");
+
+
+
+        //criando instanciando!
+       $cliente_endereco = new ClienteEndereco();//instancia
+        //não está passando a cidade ou estado!
+        dd($values);
+        $cliente_endereco->numero = $request->input("numero","");
+        $cliente_endereco->cidade = $request->input("cidade","");//deu ruim
+        $cliente_endereco->cep = $request->input("cep","");
+        $cliente_endereco->estado = $request->input("estado","");//deu ruim
+
+
         //dd($cliente_endereco);
 
+        
         try{
+
             $cliente->save();//salvo o cliente
-            $cliente_enderecos->cliente_id = $cliente->id;//relacionamento das tabelas
-            $cliente_enderecos->save();//salve o endereço
+            $cliente_endereco->cliente_id = $cliente->id;//relacionamento das tabelas
+            $cliente_endereco->save();//salve o endereço
+            
         }catch(\Exception $e){
 
         }
