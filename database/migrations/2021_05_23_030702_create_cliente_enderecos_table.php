@@ -20,7 +20,7 @@ class CreateClienteEnderecosTable extends Migration
             $table->string("cidade");
             $table->string("cep");
             $table->string("estado");
-
+            
             $table->integer("cliente_id")
                 ->unsigned();
 

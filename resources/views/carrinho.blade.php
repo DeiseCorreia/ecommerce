@@ -20,7 +20,10 @@
                             <a href="{{ route ('carrinho_excluir', ['indice' =>$indice])}}" class="btn btn-danger btn-sm">
                                 <!--<img  class="img01" src="img/lixeira.png">-->
                                 <i class="fa fa-trash"></i> <strong>Delete</strong>
+                                
                             </a>
+                            <!--<small>QTD:</small>-->
+                            <input type="number" id="qtd" style="width:35px; height:25px;"><!--config a qtd dos produtos"-->
                         </td>
                         <td><img src="{{asset($p->foto)}}" height="50"></td>
                         <td>{{$p->nome}}</td>

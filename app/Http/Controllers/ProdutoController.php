@@ -68,9 +68,9 @@ class ProdutoController extends Controller
     public function excluirCarrinho($indice){
         $carrinho = session('cart' , []);
         if(isset($carrinho[$indice])){
-            unset($carrinho[$indice]);
+            unset($carrinho[$indice]);//excluo o produto
         }
-        session(["cart" => $carrinho]);
-        return \redirect()->route("ver_carrinho");
+        session(["cart" => $carrinho]);//substituo
+        return redirect()->route("ver_carrinho");
     }
 }
