@@ -35,12 +35,13 @@ class ClienteController extends Controller
         $cliente->senha = $request->input("senha"," ");
         $cliente->nome = $request->input("nome"," ");
 
-
+        $senha = $request->input("senha","");
+        $cliente->senha = \Hash::make($senha);//está criptografando a senha
 
         //criando instanciando!
        $cliente_endereco = new ClienteEndereco();//instancia
         //não está passando a cidade ou estado!
-        dd($values);
+        //dd($values);
         $cliente_endereco->numero = $request->input("numero","");
         $cliente_endereco->cidade = $request->input("cidade","");//deu ruim
         $cliente_endereco->cep = $request->input("cep","");
@@ -51,13 +52,14 @@ class ClienteController extends Controller
 
         
         try{
-
+            \DB::beginTransaction();//iniciando uma transação
             $cliente->save();//salvo o cliente
             $cliente_endereco->cliente_id = $cliente->id;//relacionamento das tabelas
             $cliente_endereco->save();//salve o endereço
             
         }catch(\Exception $e){
-
+            //tratar o erro(mensagem amigavel para o cliente/usuário)
+            \DB::rollback();//cancelar a transação
         }
 
        //return redirect()->back();

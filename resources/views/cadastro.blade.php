@@ -1,7 +1,21 @@
 
 @extends('layout')
-@section('conteudo')
 
+@section("scriptjs")
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(function(){//mascara
+            //jquery -- onload -- ao carregar a pagina
+            $("#cpf").mask("000.000.000-00")
+            $("#cep").mask("00000-000")
+        })
+
+    </script>
+@endsection
+    
+
+@section('conteudo')
         <div class="col-12">
             <h2 class="mb-3">Cadastro</h2>
         </div>
@@ -23,14 +37,15 @@
 
                 <div class="col-6">
                     <div class=" form-group">
-                        CPF:<br><input name="cpf" placeholder="09-999-999-90" type="text" class="form-control" required />
+                        CPF:<br><input name="cpf" id="cpf"  type="text" class="form-control" required />
                     </div>
                 </div>
 
                 <div class="col-6">
                     <div class=" form-group">
+
                     Senha:<br><input name="senha" type="password" class="form-control" required/>
-                    <h6 style="color:gray;"><strong>Senha tem que conter no minimo 8 caracteres</strong></h6>
+                    <h6 style="color:gray;"><span id="passwordHelpInline" class="form-text"> Must be 8-20 characters long.</h6>
                     </div>
                 </div>
 
@@ -60,7 +75,7 @@
 
                 <div class="col-2">
                     <div class=" form-group">
-                   Número:<br><input name="numero"id="numero"type="text" class="form-control"/>
+                   Número:<br><input name="numero"id="numero"type="number" class="form-control"/>
                     </div>
                 </div>
 

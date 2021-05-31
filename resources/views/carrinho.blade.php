@@ -22,10 +22,6 @@
                                 <i class="fa fa-trash"></i> <strong>-</strong>
                                 
                             </a>
-                            @if ($isset ??($cart) && ($indice > 1))
-                                    <img src="carrinho1.png" alt="carrinho 1">
-
-                            @endif
                             
 
                              <input type="number" id="qtd" style="width:35px; height:25px;"><!--config a qtd dos produtos"-->
@@ -46,6 +42,7 @@
             
         </table>  
         <input class="btn btn-success btn-sm" type="submit" value="Compra" href="#">   
+        
        
        @else
             <img  class="img01" src="img/carrinhovazio.png">
