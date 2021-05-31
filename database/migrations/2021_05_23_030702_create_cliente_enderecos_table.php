@@ -28,7 +28,7 @@ class CreateClienteEnderecosTable extends Migration
 
             $table->foreign("cliente_id")
             ->references("id")->on("clientes")
-                ->onDelete("cascade");
+                ->onDelete("cascade")->onUpdate("cascade");
         });
     }
 

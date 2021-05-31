@@ -26,6 +26,8 @@ class CreatePedidosTable extends Migration
                 ->references("id")->on("clientes")
                 ->onDelete("cascade");
         });
+
+        
     }
 
     /**

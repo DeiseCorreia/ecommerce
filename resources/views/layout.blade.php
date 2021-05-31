@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" >
     <title>.Net Eletronics</title>
     <style>
+
         .img01{
             width: 56px;
         }
@@ -21,6 +22,9 @@
         
         .nav-link{
             color:black;
+        }
+        .navbar{
+            justify-content:space-between;
         }
     </style>
     @yield("scriptjs")

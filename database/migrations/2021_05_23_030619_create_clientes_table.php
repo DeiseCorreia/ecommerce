@@ -23,6 +23,8 @@ class CreateClientesTable extends Migration
             
             $table->timestamps();
         });
+
+        
     }
 
     /**

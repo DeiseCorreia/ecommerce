@@ -24,10 +24,7 @@
                             </a>
                             
 
-                             <input type="number" id="qtd" style="width:35px; height:25px;"><!--config a qtd dos produtos"-->
-                            <a href="#" class="btn btn-success btn-sm">
-                                <i class="fa fa-trash"></i> <strong>+</strong>
-                                </a>
+                             
                             <!--<small>QTD:</small>-->
                            
                         </td>
@@ -41,7 +38,7 @@
             </tbody>
             
         </table>  
-        <input class="btn btn-success btn-sm" type="submit" value="Compra" href="#">   
+        <input class="btn btn-outline-success btn-sm btn-sm" type="submit" value="Compra" href="#">   
         
        
        @else

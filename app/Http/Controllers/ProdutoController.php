@@ -9,15 +9,21 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller
 {
     //
+    
     public function index(Request $request){//method padrão
         
         $dta =[];
 
         //buscar todos os produtos(select * from Produtos;)
         $listprod = \App\Models\Produto::all();
+
         $dta["lista"] = $listprod;
+
         return view("inicio", $dta);
     }
+
+
+
     public function categoria($idcategoria=0){//sobrecarga
         
         $dta =[];
@@ -28,49 +34,40 @@ class ProdutoController extends Controller
         $queryprod= Produto::limit(10);
 
         if($idcategoria != 0){//se for != é porque foi passado 
+
             //where categoria_id = $idcategoria; (condição)
+
             $queryprod->where("categoria_id", $idcategoria);
         }
 
         $listprod = $queryprod->get();
         
         $dta["lista"] = $listprod;
+
         $dta["listaCategoria"] = $listaCategoria;
+
         $dta["idcategoria"] = $idcategoria;//mandando para a view
+
         return view("categoria",$dta);
     }
-    public function adicionarCarrinho($idProduto = 0){
-        //buscar um produto pelo id
-        $prod = Produto::find($idProduto);//pegando a chave primaria com essa propriedade
+    //cadastro de produtos
 
-        if($prod){//normalmente no laravel ele grava seus dados em arquivos no caso das sessoes
-            //parabéns você achou um produto
-            //buscar da sessão o carrinho atual
-            $carrinho = session('cart',[]);//se a sessão não existir será um array vazio
+    public function cadastroProduto($idprod = 0){
 
-            array_push($carrinho, $prod);//add no carrinho o objeto prod
-            session(['cart' => $carrinho]);
-        }
+        //pega todos os valores do form
+        $values = $request->all();
 
-        return redirect()->route("inicio");//independentemente volte pra tela principal
-    }
-
-    public function verCarrinho(Request $request){
-       $carrinho = session('cart', []) ;
-       //dd($carrinho);//mostra os dados do carrinho e finaliza o metodo
-
-       //aqui estamos devolvendo pra view
-       $dta = ['cart' => $carrinho];
-       return view("carrinho",$dta);//retornando
-    }
+        $prod = new Produto();
 
 
-    public function excluirCarrinho($indice){
-        $carrinho = session('cart' , []);
-        if(isset($carrinho[$indice])){
-            unset($carrinho[$indice]);//excluo o produto
-        }
-        session(["cart" => $carrinho]);//substituo
-        return redirect()->route("ver_carrinho");
-    }
+        $prod->nome = $request->input("nome"," ");
+        $prod->foto = $request->input("foto"," ");
+        $prod->descricao= $request->input("descricao"," ");
+        $prod->valor= $request->input("valor"," ");
+
+        return view("categoria",$dta);
+    }   
+
+       
+   
 }

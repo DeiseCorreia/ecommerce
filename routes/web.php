@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -21,6 +22,8 @@ Route::match(['get','post'], '/', [ ProdutoController::class,'index'])->name("in
 
 Route::match(['get','post'], '/categoria', [ ProdutoController::class,'categoria'])->name("categoria");
 
+Route::match(['get','post'], '{idprod}/produto', [ ProdutoController::class,'cadastroProduto'])->name("produto");
+
 Route::match(['get','post'], '/{idcategoria}/categoria', [ ProdutoController::class,'categoria'])
     ->name("categoria_id");
 
@@ -35,13 +38,13 @@ Route::match(['get','post'], '/usuario',
 [ UserController::class,'usuario'])->name("usuario");
 
 Route::match(['get','post'], '/{idproduto}/carrinho/adicionar', 
-[ ProdutoController::class,'adicionarCarrinho'])->name("adicionar_carrinho");
+[ CarrinhoController::class,'adicionarCarrinho'])->name("adicionar_carrinho");
 
 Route::match(['get','post'], '/carrinho', 
-[ ProdutoController::class,'verCarrinho'])->name("ver_carrinho");
+[ CarrinhoController::class,'verCarrinho'])->name("ver_carrinho");
 
 Route::match(['get','post'], '/{indice}/excluircarrinho', 
-[ ProdutoController::class,'excluirCarrinho'])->name("carrinho_excluir");
+[ CarrinhoController::class,'excluirCarrinho'])->name("carrinho_excluir");
 
 
 

@@ -104,7 +104,7 @@
 
                 <div class="col-6">
                     <div class=" form-group">
-                     <input type="submit" value="Cadastrar" class="btn btn-success btn-sm">
+                     <input type="submit" value="Cadastrar" class="btn btn-outline-success btn-sm">
                     </div>
                 </div>
             </div>
