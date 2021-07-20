@@ -39,8 +39,8 @@
               -->  
                 <a class="nav-link" href="{{ route('categoria')}}">CATEGORIA</a>
                 <img class="img01" src="img/contato.png" style="width:2%;height:1%;">
-                <a class="nav-link" href="{{ route('contato')}}">DASHBOARD</a>
-                <a class="nav-link" href="{{ route('usuario')}}">---</a>
+                <a class="nav-link" href="{{ route('usuario')}}">USUARIO</a>
+                
                 
                 
             </div>

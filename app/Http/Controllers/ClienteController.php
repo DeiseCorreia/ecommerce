@@ -9,11 +9,7 @@ use App\Models\ClienteEndereco;
 class ClienteController extends Controller
 {
     //
-    public function contato(Request $request){
-        
-        $dta =[];
-        return view("contato",$dta);
-    }
+   
     public function cadastro(Request $request){
         
         $dta =[];
@@ -22,13 +18,9 @@ class ClienteController extends Controller
 
     public function cadastroCliente(Request $request){
 
-        //pega todos os valores do form
         $values = $request->all();
 
-        $cliente = new Cliente();//instancia
-        //para evitar ficar fazendo isso($cliente->cpf = $request->input("cpf", ""));
-        //$cliente->fill($values);//metodo fill()
-        //dd($values);
+        $cliente = new Cliente();
 
 
         $cliente->login = $request->input("cpf"," ");
@@ -36,33 +28,22 @@ class ClienteController extends Controller
         $cliente->nome = $request->input("nome"," ");
 
         $senha = $request->input("senha","");
-        $cliente->senha = \Hash::make($senha);//está criptografando a senha
-
-        //criando instanciando!
-       $cliente_endereco = new ClienteEndereco();//instancia
-        //não está passando a cidade ou estado!
-        //dd($values);
+        $cliente->senha = \Hash::make($senha);
+       $cliente_endereco = new ClienteEndereco();
         $cliente_endereco->numero = $request->input("numero","");
-        $cliente_endereco->cidade = $request->input("cidade","");//deu ruim
+        $cliente_endereco->cidade = $request->input("cidade","");
         $cliente_endereco->cep = $request->input("cep","");
-        $cliente_endereco->estado = $request->input("estado","");//deu ruim
+        $cliente_endereco->estado = $request->input("estado","");
 
-
-        //dd($cliente_endereco);
-
-        
         try{
-            \DB::beginTransaction();//iniciando uma transação
-            $cliente->save();//salvo o cliente
-            $cliente_endereco->cliente_id = $cliente->id;//relacionamento das tabelas
-            $cliente_endereco->save();//salve o endereço
-            
+            \DB::beginTransaction();
+            $cliente->save();
+            $cliente_endereco->cliente_id = $cliente->id;
+            $cliente_endereco->save();
         }catch(\Exception $e){
-            //tratar o erro(mensagem amigavel para o cliente/usuário)
-            \DB::rollback();//cancelar a transação
+            
+            \DB::rollback();
         }
-
-       //return redirect()->back();
         return redirect()->route("cadastro");
     }
 }

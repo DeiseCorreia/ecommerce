@@ -9,8 +9,9 @@ use App\Models\ClienteEndereco;
 class UserController extends Controller
 {
     //
-    public function usuario( Request $request){//sobrecarga
+    public function usuario(){//sobrecarga
         
+       return view('usuario');
        
     }
 }
